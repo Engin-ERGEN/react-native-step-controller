@@ -1,20 +1,18 @@
-import { multiply } from 'react-native-step-controller';
-import { Text, View, StyleSheet } from 'react-native';
-
-const result = multiply(3, 7);
+import { Stepper, StepperItem } from 'react-native-step-controller';
+import { Text } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <Stepper>
+      <StepperItem title="First Step">
+        <Text>This is the first step.</Text>
+      </StepperItem>
+      <StepperItem title="Second Step">
+        <Text>This is the second step.</Text>
+      </StepperItem>
+      <StepperItem title="Third Step">
+        <Text>This is the third step.</Text>
+      </StepperItem>
+    </Stepper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
