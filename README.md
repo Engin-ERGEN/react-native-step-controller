@@ -2,6 +2,8 @@
 
 A simple and customizable stepper component for React Native applications.
 
+![Preview](example/assets/react-native-step-controller.gif)
+
 ## Installation
 
 You can install `react-native-step-controller` using npm or yarn:
