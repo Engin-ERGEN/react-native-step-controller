@@ -1,2 +1,4 @@
-export { default as Stepper } from './Stepper';
-export * from './Stepper';
+import Stepper from './Stepper';
+import StepperItem from './components/StepperItem';
+
+export { Stepper, StepperItem };
