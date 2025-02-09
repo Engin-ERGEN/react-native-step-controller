@@ -2,7 +2,7 @@
 
 A simple and customizable stepper component for React Native applications.
 
-![Preview](example/assets/react-native-step-controller.gif)
+![Preview](https://raw.githubusercontent.com/Engin-ERGEN/react-native-step-controller/main/example/assets/react-native-step-controller.gif)
 
 ## Installation
 
