@@ -130,8 +130,7 @@ const Stepper = (
             showsHorizontalScrollIndicator={false}
           >
             <View style={[styles.horizontalStack, stepperStyles.header]}>
-              {items.map((item: any, index: number) => {
-                console.log(typeof item);
+              {items.map((_item: any, index: number) => {
                 return (
                   <StepHeaderItem
                     isActive={index + 1 === step}
