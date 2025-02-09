@@ -53,10 +53,12 @@ export default function App() {
 | `containerStyle`               | `any`                                | Style of main container of Stepper.                                                                                              |
 | `paginationContainerStyle`     | `any`                                | Style of pagination header container of Stepper.                                                                                 |
 | `footerContainerStyle`         | `any`                                | Style of footer container of Stepper.                                                                                            |
-| `stepHeaderItemStyle`          | `any`                                | Style of step item header. The style of each circle.                                                                             |
 | `nextButtonContainerStyle`     | `any`                                | Next button's container style.                                                                                                   |
 | `previousButtonContainerStyle` | `any`                                | Previous button's container style.                                                                                               |
 | `nextButtonTextStyle`          | `any`                                | Next button's text style.                                                                                                        |
+| `circleOptions`                | `CircleColorProps`                   | The circle options for styling.                                                                                                  |
+| `circleItemStyle`              | `any`                                | Style of circle step item header. The style of each circle's container.                                                          |
+| `circleItemTextStyle`          | `any`                                | Style of circle step item text. The style of each circle's text.                                                                 |
 | `previousButtonTextStyle`      | `any`                                | Previous button's text style.                                                                                                    |
 | `nextButtonDisabled`           | `boolean`                            | Disable the next button.                                                                                                         |
 | `backButtonDisabled`           | `boolean`                            | Disable the previous button.                                                                                                     |
@@ -67,8 +69,6 @@ export default function App() {
 | `previousButtonTitle`          | `string`                             | Previous button's title.                                                                                                         |
 | `nextButtonTitle`              | `string`                             | Next button's title.                                                                                                             |
 | `dividerColor`                 | `string`                             | Divider color of circles.                                                                                                        |
-| `dividerColor`                 | `string`                             | Divider color of circles.                                                                                                        |
-| `circleOptions`                | `CircleColorProps`                   | The circle options for styling.                                                                                                  |
 
 ### CircleColorProps
 
