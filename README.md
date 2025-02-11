@@ -45,54 +45,55 @@ export default function App() {
 
 ## Stepper Props
 
-| Prop                           | Type                                 | Description                                                                                                                      |
-| ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| `children`                     | `React.ReactNode, React.ReactNode[]` | StepperItem as an array or a single component.                                                                                   |
-| `footer`                       | `boolean`                            | Used to determine footer visibility.                                                                                             |
-| `currentStep`                  | `number`                             | The index of the current step (starting from 0)                                                                                  |
-| `onStepPress`                  | `function`                           | Callback when a step is pressed                                                                                                  |
-| `pagination`                   | `boolean`                            | Visibility of top pagination.                                                                                                    |
-| `containerStyle`               | `any`                                | Style of main container of Stepper.                                                                                              |
-| `paginationContainerStyle`     | `any`                                | Style of pagination header container of Stepper.                                                                                 |
-| `footerContainerStyle`         | `any`                                | Style of footer container of Stepper.                                                                                            |
-| `nextButtonContainerStyle`     | `any`                                | Next button's container style.                                                                                                   |
-| `previousButtonContainerStyle` | `any`                                | Previous button's container style.                                                                                               |
-| `nextButtonTextStyle`          | `any`                                | Next button's text style.                                                                                                        |
-| `circleOptions`                | `CircleColorProps`                   | The circle options for styling.                                                                                                  |
-| `circleItemStyle`              | `any`                                | Style of circle step item header. The style of each circle's container.                                                          |
-| `circleItemTextStyle`          | `any`                                | Style of circle step item text. The style of each circle's text.                                                                 |
-| `previousButtonTextStyle`      | `any`                                | Previous button's text style.                                                                                                    |
-| `nextButtonDisabled`           | `boolean`                            | Disable the next button.                                                                                                         |
-| `backButtonDisabled`           | `boolean`                            | Disable the previous button.                                                                                                     |
-| `activeStep`                   | `number`                             | Set active step.                                                                                                                 |
-| `onActiveStepChange`           | `Function`                           | This function will trigger on active step changed.                                                                               |
-| `LastStepFooterComponent`      | `React.ReactNode`                    | Last step footer component. This will automatically applies in the footer. However, in the future it will perhaps be deprecated. |
-| `canClickStepNumber`           | `boolean`                            | Normally, user can't click step number as default. But, you can make it clickable.                                               |
-| `previousButtonTitle`          | `string`                             | Previous button's title.                                                                                                         |
-| `nextButtonTitle`              | `string`                             | Next button's title.                                                                                                             |
-| `dividerColor`                 | `string`                             | Divider color of circles.                                                                                                        |
+| Prop                           | Type                                 | Description                                                                                                                      | Optional |
+| ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `children`                     | `React.ReactNode, React.ReactNode[]` | StepperItem as an array or a single component.                                                                                   | No       |
+| `footer`                       | `boolean, React.ReactNode`           | Used to determine footer visibility.                                                                                             | Yes      |
+| `activeStep`                   | `number`                             | The index of the current step (starting from 1)                                                                                  | Yes      |
+| `pagination`                   | `boolean`                            | Visibility of top pagination.                                                                                                    | Yes      |
+| `containerStyle`               | `any`                                | Style of main container of Stepper.                                                                                              | Yes      |
+| `paginationContainerStyle`     | `any`                                | Style of pagination header container of Stepper.                                                                                 | Yes      |
+| `footerContainerStyle`         | `any`                                | Style of footer container of Stepper.                                                                                            | Yes      |
+| `nextButtonContainerStyle`     | `any`                                | Next button's container style.                                                                                                   | Yes      |
+| `previousButtonContainerStyle` | `any`                                | Previous button's container style.                                                                                               | Yes      |
+| `nextButtonTextStyle`          | `any`                                | Next button's text style.                                                                                                        | Yes      |
+| `circleOptions`                | `CircleColorProps`                   | The circle options for styling.                                                                                                  | Yes      |
+| `circleItemStyle`              | `any`                                | Style of circle step item header. The style of each circle's container.                                                          | Yes      |
+| `circleItemTextStyle`          | `any`                                | Style of circle step item text. The style of each circle's text.                                                                 | Yes      |
+| `previousButtonTextStyle`      | `any`                                | Previous button's text style.                                                                                                    | Yes      |
+| `nextButtonDisabled`           | `boolean`                            | Disable the next button.                                                                                                         | Yes      |
+| `backButtonDisabled`           | `boolean`                            | Disable the previous button.                                                                                                     | Yes      |
+| `onActiveStepChange`           | `Function`                           | This function will trigger on active step changed.                                                                               | Yes      |
+| `LastStepFooterComponent`      | `React.ReactNode`                    | Last step footer component. This will automatically applies in the footer. However, in the future it will perhaps be deprecated. | Yes      |
+| `canClickStepNumber`           | `boolean`                            | Normally, user can't click step number as default. But, you can make it clickable.                                               | Yes      |
+| `previousButtonTitle`          | `string`                             | Previous button's title.                                                                                                         | Yes      |
+| `nextButtonTitle`              | `string`                             | Next button's title.                                                                                                             | Yes      |
+| `dividerColor`                 | `string`                             | Divider color of circles.                                                                                                        | Yes      |
+| `dividerSize`                  | `number`                             | Size of divider.                                                                                                                 | Yes      |
+| `attachedDivider`              | `boolean`                            | Determines whether the Divider is attached or not.                                                                               | Yes      |
 
 ### CircleColorProps
 
-| Prop              | Type         | Description                                     |
-| ----------------- | ------------ | ----------------------------------------------- |
-| `textColor`       | `ColorProps` | You can change your circle's text style.        |
-| `backgroundColor` | `ColorProps` | Background color of active or inactive circles. |
+| Prop              | Type         | Description                                     | Optional |
+| ----------------- | ------------ | ----------------------------------------------- | -------- |
+| `textColor`       | `ColorProps` | You can change your circle's text style.        | Yes      |
+| `backgroundColor` | `ColorProps` | Background color of active or inactive circles. | Yes      |
+| `borderColor`     | `ColorProps` | Border color of active or inactive circles.     | Yes      |
 
 ### ColorProps
 
-| Prop            | Type     | Description  |
-| --------------- | -------- | ------------ |
-| `activeColor`   | `string` | Active Color |
-| `inactiveColor` | `string` | Active Color |
+| Prop            | Type     | Description  | Optional |
+| --------------- | -------- | ------------ | -------- |
+| `activeColor`   | `string` | Active Color | Yes      |
+| `inactiveColor` | `string` | Active Color | Yes      |
 
 ## Stepper Item Props
 
-| Prop                    | Type              | Description                                    |
-| ----------------------- | ----------------- | ---------------------------------------------- |
-| `children`              | `React.ReactNode` | Component that will be inside the StepperItem. |
-| `title`                 | `string`          | Every stepper item has a title.                |
-| `contentContainerStyle` | `any`             | Container style of the stepper item.           |
+| Prop                    | Type              | Description                                    | Optional |
+| ----------------------- | ----------------- | ---------------------------------------------- | -------- |
+| `children`              | `React.ReactNode` | Component that will be inside the StepperItem. | No       |
+| `title`                 | `string`          | Every stepper item has a title.                | Yes      |
+| `contentContainerStyle` | `any`             | Container style of the stepper item.           | Yes      |
 
 ## Ref Usage
 
@@ -136,13 +137,19 @@ export default App = () => {
 
 ## Customization
 
-You can customize the styles of the stepper using the `containerStyle`, `nextButtonTitle`, `previousButtonTitle` props:
+You can customize the styles of the stepper using the styling props:
 
 ```tsx
 <Stepper
   previousButtonTitle="Example Previous"
   nextButtonTitle="Example Next"
   containerStyle={{ backgroundColor: 'red' }}
+  previousButtonContainerStyle={{ backgroundColor: '#3a498d' }}
+  paginationContainerStyle={{
+    backgroundColor: '#3a498d',
+    elevation: 2,
+  }}
+  circleItemTextStyle={{ color: 'white', fontSize: 30 }}
 >
   <StepperItem title="First Step">
     <Text>This is the first step.</Text>
