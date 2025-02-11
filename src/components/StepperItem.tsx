@@ -15,9 +15,11 @@ export default ({
 }: StepperItemProps) => {
   return (
     <>
-      <Text style={[stepperItemStyles.headerItemText, { color: 'black' }]}>
-        {title}
-      </Text>
+      {title ? (
+        <Text style={[stepperItemStyles.headerItemText, { color: 'black' }]}>
+          {title}
+        </Text>
+      ) : null}
       <View style={[stepperItemStyles.content, contentContainerStyle]}>
         {children}
       </View>
@@ -27,12 +29,13 @@ export default ({
 
 const stepperItemStyles = StyleSheet.create({
   content: {
-    marginVertical: '2%',
+    marginBottom: '2%',
   },
   headerItemText: {
     fontSize: width * 0.08,
     textAlign: 'center',
     marginTop: '2%',
     fontWeight: '500',
+    marginBottom: '2%',
   },
 });

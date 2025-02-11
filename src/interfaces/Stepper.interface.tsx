@@ -4,7 +4,7 @@ import type { CircleOptionsProps } from './StepHeaderItem.interface';
 
 export interface StepperProps {
   children: React.ReactNode | React.ReactNode[];
-  footer?: boolean;
+  footer?: boolean | React.ReactNode;
   pagination?: boolean;
   containerStyle?: StyleProp<ViewStyle> | null;
   paginationContainerStyle?: StyleProp<ViewStyle> | null;
@@ -22,7 +22,10 @@ export interface StepperProps {
   onActiveStepChange?: Function | null;
   LastStepFooterComponent?: React.FC | null;
   canClickStepNumber?: boolean;
+
   dividerColor?: string;
+  dividerSize?: number;
+  attachedDivider?: boolean;
 
   circleItemStyle?: StyleProp<ViewStyle> | null;
   circleItemTextStyle?: StyleProp<TextStyle> | null;

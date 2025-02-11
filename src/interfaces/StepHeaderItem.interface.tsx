@@ -7,6 +7,7 @@ export interface ColorProps {
 export interface CircleOptionsProps {
   textColor?: ColorProps;
   backgroundColor?: ColorProps;
+  borderColor?: ColorProps;
 }
 
 export interface StepHeaderItemProps {
@@ -17,5 +18,7 @@ export interface StepHeaderItemProps {
   containerStyle?: StyleProp<ViewStyle> | null;
   stepHeaderItemTextStyle?: StyleProp<TextStyle> | null;
   dividerColor?: string;
+  dividerSize?: number;
+  attachedDivider?: boolean;
   circleOptions?: CircleOptionsProps;
 }

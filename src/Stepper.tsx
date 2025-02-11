@@ -46,6 +46,8 @@ const Stepper = (
     nextButtonTitle = 'Next',
     previousButtonTitle = 'Previous',
     dividerColor = '#DBDBDB',
+    dividerSize,
+    attachedDivider,
 
     circleOptions = {
       backgroundColor: {
@@ -140,6 +142,8 @@ const Stepper = (
                     changeActiveStep={canClickStepNumber ? setStep : null}
                     containerStyle={circleItemStyle}
                     dividerColor={dividerColor}
+                    attachedDivider={attachedDivider}
+                    dividerSize={dividerSize}
                     stepHeaderItemTextStyle={circleItemTextStyle}
                     circleOptions={circleOptions}
                   />
@@ -160,7 +164,7 @@ const Stepper = (
           })}
         </Layout>
       ) : null}
-      {typeof footer === 'boolean' ? (
+      {typeof footer === 'boolean' && footer ? (
         <View
           style={[
             styles.shadow,

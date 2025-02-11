@@ -1,6 +1,4 @@
-import { Dimensions, StyleSheet } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   shadow: {
@@ -20,9 +18,7 @@ export default StyleSheet.create({
   },
 
   divider: {
-    width: width * 0.018,
     borderWidth: 1,
-    marginHorizontal: '2%',
     alignSelf: 'center',
   },
 });
