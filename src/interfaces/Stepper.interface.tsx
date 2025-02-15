@@ -33,4 +33,8 @@ export interface StepperProps {
 
   previousButtonTitle?: string;
   nextButtonTitle?: string;
+
+  transformActiveCircle?: boolean;
+  animated?: boolean;
+  completedColor?: string;
 }

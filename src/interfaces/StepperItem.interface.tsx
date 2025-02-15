@@ -5,4 +5,5 @@ export interface StepperItemProps {
   title?: string;
   children: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle> | null;
+  completed?: boolean;
 }

@@ -12,11 +12,17 @@ export default ({
   title,
   children,
   contentContainerStyle = null,
+  completed = false,
 }: StepperItemProps) => {
   return (
     <>
       {title ? (
-        <Text style={[stepperItemStyles.headerItemText, { color: 'black' }]}>
+        <Text
+          style={[
+            stepperItemStyles.headerItemText,
+            { color: completed ? 'green' : 'black' },
+          ]}
+        >
           {title}
         </Text>
       ) : null}

@@ -11,6 +11,7 @@ import React, {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useRef,
   useState,
 } from 'react';
 import type { StepperProps } from './interfaces/Stepper.interface';
@@ -45,7 +46,7 @@ const Stepper = (
 
     nextButtonTitle = 'Next',
     previousButtonTitle = 'Previous',
-    dividerColor = '#DBDBDB',
+    dividerColor = '#BABABA',
     dividerSize,
     attachedDivider,
 
@@ -59,11 +60,15 @@ const Stepper = (
         inactiveColor: 'lightgray',
       },
     },
+    transformActiveCircle = false,
+    animated = false,
+    completedColor,
   }: StepperProps,
   ref?: React.Ref<any>
 ) => {
   const [step, setStep] = useState(1);
   const [items, setItems] = useState<any>([]);
+  const references = useRef<any>([]);
 
   const goToStep = useCallback(
     (stepNumber: number) => {
@@ -77,7 +82,24 @@ const Stepper = (
     if (onActiveStepChange) {
       onActiveStepChange(step);
     }
-  }, [step, onActiveStepChange]);
+
+    if (references.current[step - 1])
+      references.current[step - 1].animated = false;
+
+    if (
+      animated &&
+      step - 2 >= 0 &&
+      references.current[step - 2] &&
+      references.current[step - 2]?.animateColor
+    ) {
+      const previousStep = references.current[step - 2];
+
+      if (previousStep.animated) return;
+
+      previousStep.animated = true;
+      previousStep?.animateColor();
+    }
+  }, [step, onActiveStepChange, animated]);
 
   useEffect(() => {
     const length = items.length;
@@ -132,20 +154,40 @@ const Stepper = (
             showsHorizontalScrollIndicator={false}
           >
             <View style={[styles.horizontalStack, stepperStyles.header]}>
-              {items.map((_item: any, index: number) => {
+              {items.map((item: any, index: number) => {
+                let completed = false;
+                if (
+                  item.props['completed'] &&
+                  typeof item.props['completed'] === 'boolean'
+                ) {
+                  completed = item.props['completed'];
+                }
+
+                completed = completed || index + 1 < step;
+
                 return (
                   <StepHeaderItem
+                    ref={(ref) => {
+                      if (animated) {
+                        const reference = references.current[index];
+                        if (!reference) references.current[index] = ref;
+                      }
+                    }}
                     isActive={index + 1 === step}
                     key={`STEP_HEADER_ITEM_${index}`}
                     number={index + 1}
                     isLast={index === items.length - 1}
                     changeActiveStep={canClickStepNumber ? setStep : null}
                     containerStyle={circleItemStyle}
-                    dividerColor={dividerColor}
+                    dividerColor={completed ? 'lightgreen' : dividerColor}
                     attachedDivider={attachedDivider}
                     dividerSize={dividerSize}
                     stepHeaderItemTextStyle={circleItemTextStyle}
                     circleOptions={circleOptions}
+                    transformActiveCircle={transformActiveCircle}
+                    completed={completed}
+                    animated={animated}
+                    completedColor={completedColor}
                   />
                 );
               })}
@@ -232,6 +274,7 @@ const stepperStyles = StyleSheet.create({
   },
   header: {
     justifyContent: 'center',
+    alignItems: 'center',
     flex: 1,
   },
   footer: {

@@ -10,6 +10,17 @@ export interface CircleOptionsProps {
   borderColor?: ColorProps;
 }
 
+export const defaultCircleOptions: CircleOptionsProps = {
+  backgroundColor: {
+    activeColor: '#42B9FF',
+    inactiveColor: 'gray',
+  },
+  textColor: {
+    activeColor: 'white',
+    inactiveColor: 'lightgray',
+  },
+};
+
 export interface StepHeaderItemProps {
   number: number;
   isActive?: boolean;
@@ -21,4 +32,8 @@ export interface StepHeaderItemProps {
   dividerSize?: number;
   attachedDivider?: boolean;
   circleOptions?: CircleOptionsProps;
+  transformActiveCircle?: boolean;
+  completed?: boolean;
+  completedColor?: string;
+  animated?: boolean;
 }
