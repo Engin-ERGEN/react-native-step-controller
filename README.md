@@ -71,6 +71,9 @@ export default function App() {
 | `dividerColor`                 | `string`                             | Divider color of circles.                                                                                                        | Yes      |
 | `dividerSize`                  | `number`                             | Size of divider.                                                                                                                 | Yes      |
 | `attachedDivider`              | `boolean`                            | Determines whether the Divider is attached or not.                                                                               | Yes      |
+| `transformActiveCircle`        | `boolean`                            | Transforms the active circle.                                                                                                    | Yes      |
+| `animated`                     | `boolean`                            | Completed step's circle will be animated color.                                                                                  | Yes      |
+| `completedColor`               | `string`                             | Completed color of circles.                                                                                                      | Yes      |
 
 ### CircleColorProps
 
@@ -94,6 +97,7 @@ export default function App() {
 | `children`              | `React.ReactNode` | Component that will be inside the StepperItem. | No       |
 | `title`                 | `string`          | Every stepper item has a title.                | Yes      |
 | `contentContainerStyle` | `any`             | Container style of the stepper item.           | Yes      |
+| `completed`             | `any`             | Is completed step?                             | Yes      |
 
 ## Ref Usage
 

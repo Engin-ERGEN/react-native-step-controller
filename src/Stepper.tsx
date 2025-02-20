@@ -125,7 +125,7 @@ const Stepper = (
     }
   }, [children]);
 
-  const numerationWidth = items.length * width * 0.1;
+  const numerationWidth = items.length * width * 0.15;
 
   useImperativeHandle(ref, () => ({
     goToStep,

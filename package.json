@@ -1,6 +1,6 @@
 {
   "name": "react-native-step-controller",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A simple and customizable stepper component for React Native applications.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -87,8 +87,8 @@
     "@types/react": "^18.2.44"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": ">=16.0.0 <19.0.0",
+    "react-native": ">=0.61.5 <=0.76.7"
   },
   "workspaces": [
     "example"
@@ -183,5 +183,8 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.0"
+  },
+  "dependencies": {
+    "react-native-reanimated": "^3.16.7"
   }
 }
